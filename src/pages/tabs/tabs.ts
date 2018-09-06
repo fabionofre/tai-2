@@ -8,8 +8,8 @@ import { SobrePage } from '../sobre/sobre';
 })
 export class TabsPage {
 
-  imc = SobrePage;
-  sobre = ImcPage;
+  imc = ImcPage;
+  sobre = SobrePage;
 
   constructor() {
 

@@ -14,5 +14,39 @@
 
 
 <ion-content padding>
+  <ion-list>
 
+    <ion-item>
+      <ion-input placeholder="Nome" type="text" [(ngModel)]="nome"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input placeholder="Altura" type="text" [(ngModel)]="altura"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input placeholder="Peso" [(ngModel)]="peso" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Feminino</ion-label>
+      <ion-toggle [(ngModel)]="sexo" checked="true"></ion-toggle>
+    </ion-item>
+  
+    <ion-item>
+        <ion-label>Data de Nascimento</ion-label>
+        <ion-datetime displayFormat="DD MMM YYYY" 
+          monthNames="Janeiro, Fevereiro, Março, Abril, Maio, Junho, Julho, Agosto, Setembro, Outubro, Novembro, Dezembro"
+          monthShortNames="Jan, Fev, Mar, Abr, Mai, Jun, Jul, Ago, Set, Out, Nov, Dez"
+          dayNames="Domingo, Segunda, Terça, Quarta, Quinta, Sexta, Sábado"
+          dayShortNames="Dom, Seg, Ter, Qua, Qui, Sex, Sab"
+          [(ngModel)]="data_nascimento"
+        >
+        </ion-datetime>
+      </ion-item>
+  
+  </ion-list>
+  <div padding>
+      <button ion-button block (click)="calcularImc()" [color]="sexo ? 'danger' : 'primary'">Calcular</button>
+  </div>
 </ion-content>
